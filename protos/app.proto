@@ -1,13 +1,57 @@
 syntax = "proto3";
 
-service SquareRootService{
-  rpc squareRoot(Number) returns (Result);
+service Users {
+  rpc GetUsers(GetUsersRequest) returns (GetUsersResponse) {}
+  rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponse) {}
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse) {}
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse) {}
 }
 
-message Number {
-  int32 input = 1;
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string password = 4;
 }
 
-message Result {
-  int32 res = 1;
+message GetUsersRequest {
+  string name = 1;
+  int32 age = 2;
+}
+
+message GetUsersResponse {
+  repeated User users = 1;
+}
+
+message GetUserByIdRequest {
+  string id = 1;
+}
+
+message GetUserByIdResponse {
+  User users = 1;
+}
+
+message CreateUserRequest {
+  User users = 1;
+}
+
+message CreateUserResponse {
+  User users = 1;
+}
+
+message UpdateUserRequest {
+  User users = 1;
+}
+
+message UpdateUserResponse {
+  User users = 1;
+}
+
+message DeleteUserRequest {
+  string id = 1;
+}
+
+message DeleteUserResponse {
+  User users = 1;
 }
