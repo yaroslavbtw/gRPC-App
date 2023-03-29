@@ -13,8 +13,8 @@ class Users(app_pb2_grpc.UsersServicer):
         ])
 
     def GetUserById(self, request, context):
-        return app_pb2.GetUserByIdResponse(users=app_pb2.User(id='2', name='Artur Kek', email='kek@gmail.com',
-                                                              password='87654321'))
+        return app_pb2.GetUserByIdResponse(users=app_pb2.User(id='1', name='John Doe', email='abobus@gmail.com',
+                                                              password='12345678'))
 
 
 def serve():
